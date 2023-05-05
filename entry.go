@@ -1,4 +1,4 @@
-package atomic
+package atomus
 
 import "encoding/xml"
 
