@@ -43,7 +43,7 @@ func (f *Feed) SetEntry(title, author, content string) {
 
 	f.Updated = updatedRFC3339
 	f.Entry = &Entry{
-		Title:     title,
+		Title:     title + " " + updatedRFC3339,
 		Id:        strconv.FormatInt(updated.Unix(), 10),
 		Published: updatedRFC3339,
 		Updated:   updatedRFC3339,
