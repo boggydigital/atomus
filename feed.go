@@ -13,8 +13,8 @@ const (
 )
 
 type Feed struct {
-	XmlName      xml.Name `xml:"feed"` // <feed xmlns="http://www.w3.org/2005/Atom">
-	XmlNamespace string   `xml:"xmlns,attr"`
+	XMLName      xml.Name `xml:"feed"` // <feed xmlns="http://www.w3.org/2005/Atom">
+	XMLNamespace string   `xml:"xmlns,attr"`
 	Title        string   `xml:"title"` // <title>Example Feed</title>
 	//Subtitle     string   `xml:"subtitle,omitempty"`
 	Link    *Link  `xml:"link,omitempty"` //<link href="http://example.org/" />
@@ -23,13 +23,13 @@ type Feed struct {
 }
 
 type Link struct {
-	XmlName xml.Name `xml:"link"`
+	XMLName xml.Name `xml:"link"`
 	Href    string   `xml:"href,attr"`
 }
 
 func NewFeed(title, link string) *Feed {
 	return &Feed{
-		XmlNamespace: atomXMLNS,
+		XMLNamespace: atomXMLNS,
 		Title:        title,
 		Link: &Link{
 			Href: link,
