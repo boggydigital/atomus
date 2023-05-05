@@ -1,3 +1,3 @@
-module github.com/boggydigital/atomic
+module github.com/boggydigital/atomus
 
 go 1.20
