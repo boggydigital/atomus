@@ -2,7 +2,6 @@ package atomus
 
 import (
 	"encoding/xml"
-	"html/template"
 )
 
 type Entry struct {
@@ -19,9 +18,9 @@ type Entry struct {
 }
 
 type EntryContent struct {
-	XMLName xml.Name      `xml:"content"`
-	Type    string        `xml:"type,attr"`
-	Content template.HTML `xml:",innerxml"`
+	XMLName xml.Name `xml:"content"`
+	Type    string   `xml:"type,attr"`
+	Content string   `xml:",cdata"`
 }
 
 type EntryAuthor struct {
