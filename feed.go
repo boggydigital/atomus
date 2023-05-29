@@ -3,6 +3,7 @@ package atomus
 import (
 	"encoding/xml"
 	"fmt"
+	"html/template"
 	"io"
 	"strconv"
 	"time"
@@ -38,7 +39,7 @@ func NewFeed(title, link string) *Feed {
 	}
 }
 
-func (f *Feed) SetEntry(title, author, content string) {
+func (f *Feed) SetEntry(title, author string, content template.HTML) {
 	updated := time.Now()
 	updatedRFC3339 := updated.Format(time.RFC3339)
 

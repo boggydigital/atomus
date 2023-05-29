@@ -1,6 +1,9 @@
 package atomus
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"html/template"
+)
 
 type Entry struct {
 	Title string `xml:"title"` // <title>Atom-Powered Robots Run Amok</title>
@@ -16,9 +19,9 @@ type Entry struct {
 }
 
 type EntryContent struct {
-	XMLName xml.Name `xml:"content"`
-	Type    string   `xml:"type,attr"`
-	Content string   `xml:",innerxml"`
+	XMLName xml.Name      `xml:"content"`
+	Type    string        `xml:"type,attr"`
+	Content template.HTML `xml:",innerxml"`
 }
 
 type EntryAuthor struct {
