@@ -6,6 +6,7 @@ import (
 
 type Entry struct {
 	Title string `xml:"title"` // <title>Atom-Powered Robots Run Amok</title>
+	Link  *Link  `xml:"link,omitempty"`
 	// <link href="http://example.org/2003/12/13/atom03" />
 	// <link rel="alternate" type="text/html" href="http://example.org/2003/12/13/atom03.html"/>
 	// <link rel="edit" href="http://example.org/2003/12/13/atom03/edit"/>

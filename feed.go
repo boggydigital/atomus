@@ -38,13 +38,16 @@ func NewFeed(title, link string) *Feed {
 	}
 }
 
-func (f *Feed) SetEntry(title, author, content string) {
+func (f *Feed) SetEntry(title, author, link, content string) {
 	updated := time.Now()
 	updatedRFC3339 := updated.Format(time.RFC3339)
 
 	f.Updated = updatedRFC3339
 	f.Entry = &Entry{
-		Title:     fmt.Sprintf("%s - %s", title, updated.Format(time.RFC1123)),
+		Title: fmt.Sprintf("%s - %s", title, updated.Format(time.RFC1123)),
+		Link: &Link{
+			Href: link,
+		},
 		Id:        strconv.FormatInt(updated.Unix(), 10),
 		Published: updatedRFC3339,
 		Updated:   updatedRFC3339,
