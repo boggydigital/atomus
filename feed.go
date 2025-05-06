@@ -16,9 +16,9 @@ const (
 type Feed struct {
 	XMLName      xml.Name `xml:"feed"` // <feed xmlns="http://www.w3.org/2005/Atom">
 	XMLNamespace string   `xml:"xmlns,attr"`
-	Title        string   `xml:"title"`          // <title>Example Feed</title>
-	Link         *Link    `xml:"link,omitempty"` //<link href="http://example.org/" />
-	Updated      string   `xml:"updated"`        // <updated>2003-12-13T18:30:02Z</updated>
+	Title        string   `xml:"title"`                   // <title>Example Feed</title>
+	Link         *Link    `xml:"link,omitempty,omitzero"` //<link href="http://example.org/" />
+	Updated      string   `xml:"updated"`                 // <updated>2003-12-13T18:30:02Z</updated>
 	Entry        *Entry   `xml:"entry"`
 }
 

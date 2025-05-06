@@ -6,7 +6,7 @@ import (
 
 type Entry struct {
 	Title string `xml:"title"` // <title>Atom-Powered Robots Run Amok</title>
-	Link  *Link  `xml:"link,omitempty"`
+	Link  *Link  `xml:"link,omitempty,omitzero"`
 	// <link href="http://example.org/2003/12/13/atom03" />
 	// <link rel="alternate" type="text/html" href="http://example.org/2003/12/13/atom03.html"/>
 	// <link rel="edit" href="http://example.org/2003/12/13/atom03/edit"/>
@@ -26,6 +26,6 @@ type EntryContent struct {
 
 type EntryAuthor struct {
 	XMLName xml.Name `xml:"author"`
-	Name    string   `xml:"name"`            // <name>John Doe</name>
-	Email   string   `xml:"email,omitempty"` // <email>johndoe@example.com</email>
+	Name    string   `xml:"name"`                     // <name>John Doe</name>
+	Email   string   `xml:"email,omitempty,omitzero"` // <email>johndoe@example.com</email>
 }
