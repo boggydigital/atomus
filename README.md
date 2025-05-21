@@ -1,2 +1,2 @@
-# atomic
-Convenience package to create Atom feed 
+# atomus
+Convenience package to create simple Atom feeds
